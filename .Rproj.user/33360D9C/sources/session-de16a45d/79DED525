@@ -1,0 +1,27 @@
+{
+    "id": "79DED525",
+    "path": "~/Desktop/MAP GEO R/Mappe Eurostat/Codice R/Occupazione_sportiva_eurostat_2021.R",
+    "project_path": "Codice R/Occupazione_sportiva_eurostat_2021.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1684955298098.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "547,86",
+        "scrollLine": "0",
+        "docOutlineVisible": "1"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1684956462,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1684956817241,
+    "read_only": false,
+    "read_only_alternatives": []
+}
