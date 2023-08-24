@@ -1,21 +1,5 @@
 {
     "debugBreakpointsState": {
-        "breakpoints": [
-            {
-                "id": 0,
-                "path": "~/Desktop/MAP GEO R/Mappe Eurostat/Codice R/Occupazione_sportiva_eurostat_2021.R",
-                "line_number": 261,
-                "function_steps": "",
-                "function_name": "get_eurostat_data",
-                "state": 2,
-                "editor_state": 2,
-                "editor_line_number": 261,
-                "is_pending_debug_completion": false,
-                "needs_updated_steps": true,
-                "type": 0,
-                "is_package_breakpoint": false,
-                "package_name": ""
-            }
-        ]
+        "breakpoints": []
     }
 }

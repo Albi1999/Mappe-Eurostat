@@ -1,0 +1,3 @@
+install.packages("reactable", "reactablefmtr", "htmltools")
+install.packages("reactable")
+install.packages("htmltools")

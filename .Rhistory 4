@@ -1,0 +1,275 @@
+library(tidyverse)
+library(sf)
+library(giscoR)
+library(classInt)
+library(eurostat)
+## 2000 FEMALES----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"tus_00age",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2000 &
+age == "TOTAL" &
+sex == "F" &
+unit == "PTP_RT" &
+acl00 == "AC6A"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2000 MALES----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"tus_00age",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2000 &
+age == "TOTAL" &
+sex == "M" &
+unit == "PTP_RT" &
+acl00 == "AC6A"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2000 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"tus_00age",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2000 &
+age == "TOTAL" &
+sex == "T" &
+unit == "PTP_RT" &
+acl00 == "AC6A"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2010 FEMALES----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"tus_00age",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2010 &
+age == "TOTAL" &
+sex == "F" &
+unit == "PTP_RT" &
+acl00 == "AC6A"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2010 MALES----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"tus_00age",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2010 &
+age == "TOTAL" &
+sex == "M" &
+unit == "PTP_RT" &
+acl00 == "AC6A"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2010 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"tus_00age",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2010 &
+age == "TOTAL" &
+sex == "T" &
+unit == "PTP_RT" &
+acl00 == "AC6A"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2021 16 -24 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2021 &
+unit == "PC_IND" &
+ind_type == "Y16_24" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2021 &
+unit == "PC_IND" &
+ind_type == "F_Y16_74" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2021 MASCHI----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2021 &
+unit == "PC_IND" &
+ind_type == "M_Y16_74" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2021 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2021 &
+unit == "PC_IND" &
+ind_type == "IND_TOTAL" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2022 16 -24 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2022 &
+unit == "PC_IND" &
+ind_type == "Y16_24" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2022 FEMMINE----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2022 &
+unit == "PC_IND" &
+ind_type == "F_Y16_74" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2022 MASCHI----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2022 &
+unit == "PC_IND" &
+ind_type == "M_Y16_74" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2022 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2022 &
+unit == "PC_IND" &
+ind_type == "IND_TOTAL" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)

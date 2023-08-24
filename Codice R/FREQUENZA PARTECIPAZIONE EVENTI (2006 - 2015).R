@@ -66,6 +66,32 @@ tab <- subset(
 )
 fix(tab)
 
+# GIF ANIMATA ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+  eurostat_df <- eurostat::get_eurostat(
+    "ilc_scp03",
+    time_format = "num"
+  ) |>
+    dplyr::filter(
+        sex == "T" &
+        age == "Y_GE16" &
+        frequenc == "GE1" &
+        isced11 == "TOTAL" &
+        acl00 == "AC525"
+    ) |>
+    dplyr::select(geo, time, values)
+  names(eurostat_df)[1] <- "CNTR_CODE"
+  return(eurostat_df)
+}
+
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+
+
+
+
+
 
 ## 2015 TOTALE----
 # get NUTS2-level data

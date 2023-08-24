@@ -1,0 +1,512 @@
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2019 Muscle-strengthening (MASCHI)----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"hlth_ehis_pe3u",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2019 &
+sex == "M" &
+age == "TOTAL" &
+deg_urb == "TOTAL" &
+physact == "MV_MSC"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2019 Muscle-strengthening ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"hlth_ehis_pe3u",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2019 &
+sex == "T" &
+age == "TOTAL" &
+deg_urb == "TOTAL" &
+physact == "MV_MSC"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2014 Aerobic sports ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"hlth_ehis_pe3u",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2014 &
+sex == "T" &
+age == "TOTAL" &
+deg_urb == "TOTAL" &
+physact == "MV_AERO_SPRT"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2019 Aerobic sports (15 - 29)----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"hlth_ehis_pe3u",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2019 &
+sex == "F" &
+age == "Y15-29" &
+deg_urb == "TOTAL" &
+physact == "MV_AERO_SPRT"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2019 Aerobic sports (FEMMINE)----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"hlth_ehis_pe3u",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2019 &
+sex == "F" &
+age == "TOTAL" &
+deg_urb == "TOTAL" &
+physact == "MV_AERO_SPRT"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2019 Aerobic sports (MASCHI)----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"hlth_ehis_pe3u",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2019 &
+sex == "M" &
+age == "TOTAL" &
+deg_urb == "TOTAL" &
+physact == "MV_AERO_SPRT"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 TOTALE----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp01",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+sex == "T" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## EXPORT ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_trd_prd",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2021 &
+unit == "THS_EUR" &
+stk_flow == "EXP" &
+prod_sp == "TOTAL" &
+partner == "WORLD"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2010 Recreational and sporting services----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_pcs_hbs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2010 &
+coicop == "CP0941"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 Recreational and sporting services----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_pcs_hbs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+coicop == "CP0941"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 Equipment for sport----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_pcs_hbs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+coicop == "CP09321"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2010 sports good and service----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_pcs_hbs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2010 &
+coicop == "SPRT"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 sports good and service----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_pcs_hbs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+coicop == "SPRT"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## IMPORT ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"sprt_trd_prd",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2021 &
+unit == "THS_EUR" &
+stk_flow == "IMP" &
+prod_sp == "TOTAL" &
+partner == "WORLD"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2020 16 -24 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2020 &
+unit == "PC_IND" &
+ind_type == "Y16_24" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2020 FEMMINE----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2020 &
+unit == "PC_IND" &
+ind_type == "F_Y16_74" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2020 MASCHI----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2020 &
+unit == "PC_IND" &
+ind_type == "M_Y16_74" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2020 ----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"isoc_ec_ibgs",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2020 &
+unit == "PC_IND" &
+ind_type == "IND_TOTAL" &
+indic_is == "I_BSPG"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2006 16-29----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2006 &
+sex == "T" &
+age == "Y16-29" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2006 FEMMINE----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2006 &
+sex == "F" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2006 MASCHI----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2006 &
+sex == "M" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 16-29----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+sex == "T" &
+age == "Y16-29" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2006 MASCHI----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2006 &
+sex == "M" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 FEMMINE----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+sex == "F" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 MASCHI----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+sex == "M" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
+## 2015 TOTALE----
+# get NUTS2-level data
+get_eurostat_data <- function() {
+eurostat_df <- eurostat::get_eurostat(
+"ilc_scp03",
+time_format = "num"
+) |>
+dplyr::filter(
+time == 2015 &
+sex == "T" &
+age == "Y_GE16" &
+frequenc == "GE1" &
+isced11 == "TOTAL" &
+acl00 == "AC525"
+) |>
+dplyr::select(geo, time, values)
+names(eurostat_df)[1] <- "CNTR_CODE"
+return(eurostat_df)
+}
+eurostat_df <- get_eurostat_data()
+head(eurostat_df)
